@@ -1,177 +1,64 @@
-# Magic App Builder 🪄
+# ChronoGlow – Colorful Time Dashboard
 
-AI-powered application generator optimized for free trial usage.
+## Overview
+ChronoGlow is a vibrant, responsive web application that brings together a collection of time‑related utilities in a single, visually appealing dashboard. Built with modern HTML, CSS, and JavaScript, the app runs entirely in the browser—no server, build tools, or dependencies required. The design embraces bold gradients, subtle shadows, and smooth animations to create an engaging user experience on both desktop and mobile devices.
 
-## ⚡ Optimized for Free Trial
+## Features
+- **Dynamic Clock** – Real‑time display of the current time, updating every second.
+- **Timezone Selector** – Switch the clock to any IANA timezone (e.g., `America/New_York`, `Asia/Tokyo`).
+- **Theme Toggle** – Light and dark mode themes with smooth transitions.
+- **Alarm Scheduler** – Set a daily alarm that triggers a browser notification when the time is reached.
+- **Countdown Timer** – Start a countdown for a custom number of seconds with visual progress feedback.
+- **Responsive Layout** – Flexbox/Grid layout adapts to various screen sizes, from phones to large monitors.
+- **Animated UI** – Subtle hover effects, fade‑in animations, and gradient transitions enhance interactivity.
 
-This version is specifically tuned for efficient use of Groq's free trial:
-- **Budget**: ~$10 per app (from $18 free credit)
-- **Speed**: 10-15 minute average generation time ✅
-- **Apps**: Build 2-3 complete apps per free trial
-- **Protection**: Auto-stops before overspending
+## Screenshots
+> *Replace the placeholders with actual screenshots of the app.*
 
-## 🚀 Quick Start
+![ChronoGlow Dashboard – Light Theme](screenshots/light-theme.png)
 
-```bash
-# Install dependencies
-pip install -r requirements.txt
+![ChronoGlow Dashboard – Dark Theme](screenshots/dark-theme.png)
 
-# Set your API key
-export GROQ_API_KEY="your-key-here"  # Linux/Mac
-$env:GROQ_API_KEY="your-key-here"    # Windows PowerShell
+## Tech Stack
+- **HTML5** – Semantic markup with `<header>`, `<main>`, `<section>`, and `<footer>`.
+- **CSS3** – Modern layout techniques (Flexbox, CSS Grid), CSS variables for theming, gradients, shadows, and keyframe animations.
+- **JavaScript (ES6+)** – Vanilla JS for all interactive logic, including `Intl.DateTimeFormat` for timezone handling, the Notification API for alarms, and `requestAnimationFrame` for smooth countdown updates.
+- **Web APIs** – Utilizes the Browser Notification API, `setInterval`, and `localStorage` for persisting user preferences.
 
-# Generate an app
-python main.py "weather app with 5-day forecast"
-```
+## Installation & Setup
+1. **Clone the repository** (or download the ZIP):
+   ```bash
+   git clone https://github.com/yourusername/chronoglow.git
+   cd chronoglow
+   ```
+2. **Open the app** – No build step is required. Simply open `index.html` in any modern web browser (Chrome, Firefox, Edge, Safari). You can double‑click the file or run:
+   ```bash
+   open index.html   # macOS
+   start index.html  # Windows
+   ```
+3. **Optional – Enable notifications**
+   When you set an alarm for the first time, the browser will ask for permission to display notifications. Accept the prompt to receive alarm alerts.
 
-## 📊 What You Get
+## Usage Guide
+1. **Current Time** – The main clock shows the local time by default.
+2. **Change Timezone** – Use the dropdown menu to select a different IANA timezone. The clock updates instantly.
+3. **Toggle Theme** – Click the sun/moon icon in the top‑right corner to switch between light and dark themes.
+4. **Set an Alarm** – Choose a time using the hour/minute selectors and click **Set Alarm**. The alarm repeats daily until you clear it.
+5. **Start a Countdown** – Enter the number of seconds, then press **Start**. The timer displays a progress bar and a visual countdown.
+6. **Persisted Settings** – Theme choice and the last selected timezone are saved in `localStorage` and restored on subsequent visits.
 
-The builder generates a complete web application:
-- ✅ `index.html` - Structured HTML
-- ✅ `styles.css` - Complete styling  
-- ✅ `script.js` - Working JavaScript
-- ✅ `README.md` - Documentation
+## Contributing
+Contributions are welcome! If you’d like to improve ChronoGlow, follow these steps:
+1. Fork the repository.
+2. Create a new branch for your feature or bug‑fix:
+   ```bash
+   git checkout -b feature/awesome-feature
+   ```
+3. Make your changes, ensuring the code follows the existing style and the app remains responsive.
+4. Test the changes across different browsers and screen sizes.
+5. Submit a pull request with a clear description of the changes.
 
-## 💰 Cost Tracking
+Please adhere to the project's coding standards and include relevant documentation or screenshots if you add new UI elements.
 
-Watch real-time budget usage during generation:
-```
-💲 API Calls: 25 | Est. Cost: $0.23
-💲 Calls: 26 | Cost: $0.24 / $10
-🔨 styles.css (try 1/3)
-✅ Successfully created styles.css
-```
-
-## 🎯 Key Features
-
-### Budget Protection
-- Max $10 per app generation
-- Real-time cost display
-- Auto-stop on limit
-- Budget alerts at 80%
-
-### Smart Optimization
-- 3 retries max per file (not 100!)
-- 1.5s API delays (faster!)
-- 1500 token limit per request
-- Compact prompts (60% fewer tokens)
-
-### Quality Validation
-- HTML: Must have DOCTYPE
-- CSS: Must have rules
-- JS: Must be functional
-- All: Min 50 bytes
-
-## 📈 Expected Costs
-
-| App Type | Files | Time | Cost |
-|----------|-------|------|------|
-| Simple   | 4     | 5-8 min | $0.30-0.50 |
-| Medium   | 4-6   | 10-15 min | $0.70-1.20 |
-| Complex  | 6-10  | 15-20 min | $1.50-2.50 |
-
-## 📚 Documentation
-
-- **[FREE_TRIAL_GUIDE.md](FREE_TRIAL_GUIDE.md)** - Complete usage guide
-- **[OPTIMIZATION_SUMMARY.md](OPTIMIZATION_SUMMARY.md)** - Before/after comparison
-- **[example_optimized_usage.py](example_optimized_usage.py)** - Code examples
-
-## 🔧 Configuration
-
-Edit `agent/config.py` to customize:
-
-```python
-MAX_BUDGET_PER_APP = 10.0      # Budget limit
-MAX_RETRIES_PER_FILE = 3       # Retry attempts  
-API_DELAY_SECONDS = 1.5        # Request delay
-MAX_TOKENS_PER_REQUEST = 1500  # Token limit
-```
-
-## 💡 Pro Tips
-
-1. **Be specific**: "todo app with dark mode" not "make something"
-2. **Limit features**: 2-4 core features ideal
-3. **Monitor costs**: Watch terminal output
-4. **Start simple**: Test with simple apps first
-
-## ⚠️ Troubleshooting
-
-### "Budget exceeded"
-- App too complex for $10 limit
-- Try simpler version or fewer features
-
-### "Rate limit"
-- Script auto-delays 1.5s
-- Just wait, it will continue
-
-### Files not created
-- Check prompt clarity
-- 3 retry limit may be reached
-- Try more specific description
-
-## 🛠️ Technical Stack
-
-- **Python 3.8+**
-- **LangGraph** - Agent orchestration
-- **LangChain** - LLM integration
-- **Groq** - API provider
-- **Model**: openai/gpt-oss-120b
-
-## 📦 Dependencies
-
-```txt
-langchain
-langchain-groq  
-langgraph
-python-dotenv
-pydantic
-```
-
-## 🎯 Architecture
-
-```
-main.py           → Entry point
-agent/
-  ├── graph.py    → Agent workflow (OPTIMIZED)
-  ├── prompts.py  → Compact prompts (OPTIMIZED)
-  ├── states.py   → State models
-  ├── tools.py    → File operations
-  ├── config.py   → Configuration (NEW)
-  └── budget_monitor.py → Budget tracking (NEW)
-```
-
-## 📊 Optimization Results
-
-### Before
-- ❌ 100 retries per file
-- ❌ No token limits
-- ❌ No cost tracking
-- ❌ 20-30 min generation
-
-### After  
-- ✅ 3 retries per file (97% less waste)
-- ✅ 1500 token limit (controlled costs)
-- ✅ Real-time cost tracking
-- ✅ 10-15 min generation ⚡
-
-**Result**: 2-3x more apps per free trial!
-
-## 🤝 Contributing
-
-Suggestions for further optimization welcome!
-
-## 📄 License
-
-MIT License
-
-## 🎉 Get Started
-
-```bash
-python main.py "your app idea here"
-```
-
-**Build smart. Build fast. Stay within budget. 🚀**
-
----
-
-*Optimized for 15-minute average generation time with free trial protection.*
+## License
+This project is licensed under the MIT License – see the `LICENSE` file for details.

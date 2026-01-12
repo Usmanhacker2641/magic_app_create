@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChronoGlow</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>ChronoGlow</h1>
+    <button id="theme-toggle" aria-pressed="false" class="theme-btn">Switch to Dark Mode</button>
+  </header>
+  <main class="container">
+    <section class="clock-section">
+      <h2>Current Time</h2>
+      <div class="clock-controls">
+        <label for="timezone-select">Timezone:</label>
+        <select id="timezone-select"></select>
+      </div>
+      <div id="clock-display" class="clock-display" aria-live="polite"></div>
+    </section>
+    <section class="alarm-section">
+      <h2>Alarm</h2>
+      <form id="alarm-form" class="alarm-form">
+        <label for="alarm-time">Set Time (HH:MM):</label>
+        <input type="time" id="alarm-time" required>
+        <button type="submit">Set Alarm</button>
+      </form>
+      <p id="alarm-status" class="alarm-status" aria-live="polite"></p>
+    </section>
+    <section class="countdown-section">
+      <h2>Countdown Timer</h2>
+      <form id="countdown-form" class="countdown-form">
+        <label for="countdown-duration">Duration (seconds):</label>
+        <input type="number" id="countdown-duration" min="1" required>
+        <button type="submit">Start</button>
+      </form>
+      <div id="countdown-display" class="countdown-display" aria-live="polite"></div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p>© 2025 ChronoGlow</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
